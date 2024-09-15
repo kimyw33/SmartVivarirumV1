@@ -134,6 +134,8 @@
   - `delay(50)`을 사용하여 버튼 상태 변화에 대한 노이즈를 방지하며, `delay(100)`으로 다음 읽기 전까지 대기합니다.<br>
 </details>
 
-  <summary>응용(05-1_ButtonControlLed)</summary>
-  - 이 프로젝트의 목적은 위에서 살펴본 버튼을 통해 3x3(총 9개)의 LED를 제어(On/Off)하는 것입니다.<br>
-  <de>
+  <summary>응용(05-1_MaintainingButtonStatus)</summary>
+ 이 프로젝트의 목적은 **버튼을 한 번 눌렀을 때 버튼 상태를 0 또는 1로 유지**하는 것입니다. 버튼이 눌릴 때마다 상태를 토글하여 시리얼 모니터에 출력합니다. 이를 통해 **디지털 입력 신호의 처리와 버튼 상태 관리**를 학습할 수 있습니다.
+
+ # 06_ButtonControlLed
+ 
