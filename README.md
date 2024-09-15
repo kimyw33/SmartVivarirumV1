@@ -64,7 +64,7 @@
 
 ---
 
-# 04_OledControl
+# 04_OledTest
 <details>
   <summary>세부 내용 보기</summary>
 
