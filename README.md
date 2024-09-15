@@ -5,7 +5,7 @@
 
 <details>
   <summary>준비물</summary>
-  - **ESP32 개발 보드**  
+  - **ESP32 개발 보드**<br>
   - **USB 케이블** (ESP32와 PC 연결용)  
   - **Arduino IDE** (코드 작성 및 업로드)  
 </details>
