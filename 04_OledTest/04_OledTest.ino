@@ -25,7 +25,8 @@ void setup() {
   display.setCursor(0, 0);  // 커서를 (0,0) 위치로 설정하여 텍스트 시작 위치 지정
   display.println("Smart");  // 첫 번째 텍스트 라인 출력
   display.println("Vivarium");  // 두 번째 텍스트 라인 출력
-  display.print("by Kimyw33");  // 세 번째 텍스트 라인 출력, by 이후는 본인의 이름 또는 닉네임 입력
+  display.println("Test"); // 세 번째 텍스트 라인 출력
+  display.print("by Kimyw33");  // 네 번째(마지막) 텍스트 라인 출력, by 이후는 본인의 이름 또는 닉네임 입력
   display.display();  // 화면에 버퍼 내용을 출력
   delay(2000);  // 2초 동안 대기
 }
