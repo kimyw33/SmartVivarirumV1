@@ -107,3 +107,33 @@
 
   <summary>응용(04-1_OledControl)</summary>
   - 이 프로젝트의 목적은 위에서 살펴본 Cds 센서와 DHT 센서로 읽어들인 값을 OLED를 활용하여 현재의 온도, 습도, 조도 상태를 실시간으로 모니터링하는 것입니다.<br>
+
+  ---
+
+# 05_Button
+
+**목적**  
+이 프로젝트의 목적은 **버튼을 한 번 눌렀을 때 버튼 상태를 0 또는 1로 유지**하는 것입니다. 버튼이 눌릴 때마다 상태를 토글하여 시리얼 모니터에 출력합니다. 이를 통해 **디지털 입력 신호의 처리와 버튼 상태 관리**를 학습할 수 있습니다.
+
+<details>
+  <summary>준비물</summary>
+  - ESP32 개발 보드<br>
+  - 버튼<br>
+  - 점퍼 와이어<br>
+  - USB 케이블 (ESP32와 PC 연결용)<br>
+  - Arduino IDE (코드 작성 및 업로드)<br>
+</details>
+
+<details>
+  <summary>코드 설명</summary>
+  - 핀 23을 `BUTTON`으로 정의합니다.<br>
+  - `lastButtonState`, `currentButtonState`, `buttonState` 변수를 정의하여 버튼 상태를 저장하고 관리합니다.<br>
+  - `setup()` 함수에서 핀 모드를 설정하고 시리얼 통신을 초기화합니다.<br>
+  - `loop()` 함수에서 버튼의 현재 상태를 읽고, 상태가 변경되었을 때 버튼 상태를 토글합니다.<br>
+  - 버튼 상태가 변화한 경우, 상태를 `buttonState`에 저장하여 시리얼 모니터에 출력합니다.<br>
+  - `delay(50)`을 사용하여 버튼 상태 변화에 대한 노이즈를 방지하며, `delay(100)`으로 다음 읽기 전까지 대기합니다.<br>
+</details>
+
+  <summary>응용(05-1_ButtonControlLed)</summary>
+  - 이 프로젝트의 목적은 위에서 살펴본 버튼을 통해 3x3(총 9개)의 LED를 제어(On/Off)하는 것입니다.<br>
+  <de>
