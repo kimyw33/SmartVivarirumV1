@@ -127,3 +127,29 @@
 
   <summary>응용(05-1_MaintainingButtonState)</summary>
  이 프로젝트의 목적은 버튼을 한 번 눌렀을 때 버튼 상태를 0 또는 1로 유지하는 것입니다. 버튼이 눌릴 때마다 상태를 토글하여 시리얼 모니터에 출력합니다.
+
+ ---
+
+ # 06_ButtonControlLed
+
+**목적**  
+이 프로젝트의 목적은 **버튼을 눌러 NeoPixel LED 스트립의 색상 상태를 제어**하는 것입니다. 버튼을 눌렀을 때, NeoPixel LED의 색상이 변경되며, 버튼을 다시 누르면 색상이 토글됩니다. 이를 통해 **버튼 입력에 따른 LED 색상 제어**를 학습할 수 있습니다.
+
+<details>
+  <summary>준비물</summary>
+  - ESP32 개발 보드<br>
+  - NeoPixel LED 스트립 (픽셀 수: 9)<br>
+  - 버튼<br>
+  - 점퍼 와이어<br>
+  - USB 케이블 (ESP32와 PC 연결용)<br>
+  - Arduino IDE (코드 작성 및 업로드)<br>
+  - Adafruit NeoPixel 라이브러리 (Arduino IDE에서 설치, 본 실습에서는 Adafruit NeoPixel by Adafruit 사용)<br>
+</details>
+
+<details>
+  <summary>코드 설명</summary>
+  - 버튼 상태 읽기: `digitalRead(BUTTON_PIN)`을 사용하여 버튼의 현재 상태를 읽어옵니다.<br>
+  - 버튼 상태 변화 감지: 버튼의 상태가 변화했는지 확인하고, 상태가 `HIGH`일 때 LED 상태를 토글합니다.<br>
+  - LED 색상 설정: `isOn` 변수에 따라 LED의 색상을 설정합니다. 버튼이 눌리면 짝수 인덱스의 LED를 빨간색으로, 홀수 인덱스의 LED를 파란색으로 설정합니다. 버튼이 눌리지 않으면 모든 LED를 꺼서 LED를 끕니다.<br>
+  - 디바운싱: 버튼 입력의 노이즈를 방지하기 위해 짧은 지연을 추가합니다.<br>
+</details>
