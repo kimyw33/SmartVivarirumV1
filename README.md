@@ -16,7 +16,7 @@
 
 ---
 
-# 02_dsSensor
+# 02_CdsSensor
 <details>
   <summary>세부 내용 보기</summary>
 
@@ -52,7 +52,7 @@
 - **점퍼 와이어**
 - **USB 케이블** (ESP32와 PC 연결용)
 - **Arduino IDE** (코드 작성 및 업로드)
-- **DHT 라이브러리** (Arduino IDE에서 설치)
+- **DHT 라이브러리** (Arduino IDE에서 설치, 본 실습에서는 DHT sensor library by Adafruit 사용)
 
 ## 코드 설명
 - **GPIO 14번 핀**에 연결된 DHT11 센서로부터 **온도**와 **습도** 데이터를 읽어들입니다.
@@ -77,7 +77,7 @@
 - **점퍼 와이어**
 - **USB 케이블** (ESP32와 PC 연결용)
 - **Arduino IDE** (코드 작성 및 업로드)
-- **Adafruit GFX 및 Adafruit SSD1306 라이브러리** (Arduino IDE에서 설치)
+- **Adafruit GFX 및 Adafruit SSD1306 라이브러리** (Arduino IDE에서 설치, 본 실습에서는 Adafruit SSD1306 by Adafruit 사용)
 
 ## 코드 설명
 - **I2C 통신**을 사용하여 **SSD1306 OLED 디스플레이**에 텍스트를 출력합니다.
