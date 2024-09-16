@@ -154,3 +154,29 @@
   - LED 색상 설정: `isOn` 변수에 따라 LED의 색상을 설정합니다. 버튼이 눌리면 짝수 인덱스의 LED를 빨간색으로, 홀수 인덱스의 LED를 파란색으로 설정합니다. 버튼이 눌리지 않으면 모든 LED를 꺼서 LED를 끕니다.<br>
   - 디바운싱: 버튼 입력의 노이즈를 방지하기 위해 짧은 지연을 추가합니다.<br>
 </details>
+
+---
+
+# 07_ConnetingToBlynkByWifi
+
+**목적**  
+이 프로젝트의 목적은 **ESP32에서 WiFi와 Blynk 서버**의 연결 상태를 확인하고, WiFi가 정상적으로 연결된 경우 **내장 LED를 1초 간격으로 깜빡이도록** 하는 것입니다. WiFi 또는 Blynk 연결이 실패할 경우 LED는 꺼집니다.<br>
+
+<details>
+  <summary>준비물</summary>
+  - ESP32 개발 보드<br>
+  - USB 케이블 (ESP32와 PC 연결용)<br>
+  - Arduino IDE (코드 작성 및 업로드)<br>
+  - Blynk 계정 및 Blynk 대시보드 (템플릿 ID와 이름 확인용)<br>
+  - 2.4[GHz]의 무선 네트워크 환경<br>
+</details>
+
+<details>
+  <summary>코드 설명</summary>
+  - Blynk 서버와 연결: `Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass)`를 사용하여 Blynk 서버와 연결을 설정합니다.<br>
+  - 내장 LED 핀 설정: `pinMode(BUILT_IN_LED, OUTPUT)`를 사용하여 내장 LED 핀을 출력 모드로 설정합니다.<br>
+  - WiFi 및 Blynk 상태 확인: `WiFi.status() == WL_CONNECTED`와 `Blynk.connected()`로 각각 WiFi와 Blynk 서버의 연결 상태를 확인합니다.<br>
+  - LED 제어: WiFi와 Blynk가 정상적으로 연결된 경우 LED를 1초 간격으로 깜빡이게 하며, 연결이 실패하면 LED를 끕니다.<br>
+</details>
+
+---
