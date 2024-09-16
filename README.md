@@ -134,8 +134,7 @@
 
 **목적**  
 이 프로젝트의 목적은 위에서 살펴본 **버튼을 활용**하여 **NeoPixel LED 스트립의 전원을 제어**하는 것입니다. 버튼을 눌렀을 때, NeoPixel LED가 켜지며, 버튼을 다시 누르면 NeoPixel LED 꺼집니다.<br>
-참고로 NeoPixel Led의 색상은 식물의 광합성에 가장 효율적인 <span style="color: blue;">청색</span>
-<span style="color: red;">적색</span>으로 설정하였습니다.
+추가로 NeoPixel Led의 색상은 식물의 광합성에 가장 효율적인 <span style="color: blue;">청색</span>과 <span style="color: red;">적색</span>으로 설정하였습니다.
 
 <details>
   <summary>준비물</summary>
