@@ -144,7 +144,7 @@
   - 점퍼 와이어<br>
   - USB 케이블 (ESP32와 PC 연결용)<br>
   - Arduino IDE (코드 작성 및 업로드)<br>
-  - Adafruit NeoPixel 라이브러리 (Arduino IDE에서 설치, 본 실습에서는 Adafruit NeoPixel by Adafruit 사용)<br>
+  - Adafruit NeoPixel 라이브러리(Arduino IDE에서 설치, 본 실습에서는 Adafruit NeoPixel by Adafruit 사용)<br>
 </details>
 
 <details>
@@ -169,6 +169,7 @@
   - Arduino IDE (코드 작성 및 업로드)<br>
   - Blynk 계정 및 Blynk 대시보드 (템플릿 ID와 이름 확인용)<br>
   - 2.4[GHz]의 무선 네트워크 환경<br>
+  - Blynk 라이브러리(Arduino IDE에서 설치, 본 실습에서는 Blynk by Volodymyr Shymanskyy 사용)
 </details>
 
 <details>
