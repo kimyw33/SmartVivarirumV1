@@ -160,24 +160,27 @@
 # 07_ConnetingToBlynkByWifi
 
 **목적**  
-이 프로젝트의 목적은 **ESP32에서 WiFi와 Blynk 서버**의 연결 상태를 확인하고, WiFi가 정상적으로 연결된 경우 **내장 LED를 1초 간격으로 깜빡이도록** 하는 것입니다. WiFi 또는 Blynk 연결이 실패할 경우 LED는 꺼집니다.<br>
+이 프로젝트의 목적은 **ESP32와 Blynk 클라우드 서버**를 이용하기 위해 기본적인 무선 **네트워크 연결 상태를 확인**하는 것입니다.
 
 <details>
   <summary>준비물</summary>
   - ESP32 개발 보드<br>
-  - USB 케이블 (ESP32와 PC 연결용)<br>
+  - USB 케이블(ESP32와 PC 연결용)<br>
+  - WiFi 네트워크 (SSID 및 비밀번호 필요. 5G는 연결이 안되므로 주의할 것)<br>
+  - Blynk 템플릿 (Blynk 계정 및 인증 토큰 필요)<br>
   - Arduino IDE (코드 작성 및 업로드)<br>
-  - Blynk 계정 및 Blynk 대시보드 (템플릿 ID와 이름 확인용)<br>
-  - 2.4[GHz]의 무선 네트워크 환경<br>
-  - Blynk 라이브러리(Arduino IDE에서 설치, 본 실습에서는 Blynk by Volodymyr Shymanskyy 사용)
+  - Blynk 라이브러리 (Arduino IDE에서 설치, 본 실습에서는 Blynk by Volodymyr Shymanskyy 사용)<br>
 </details>
 
 <details>
   <summary>코드 설명</summary>
-  - Blynk 서버와 연결: `Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass)`를 사용하여 Blynk 서버와 연결을 설정합니다.<br>
-  - 내장 LED 핀 설정: `pinMode(BUILT_IN_LED, OUTPUT)`를 사용하여 내장 LED 핀을 출력 모드로 설정합니다.<br>
-  - WiFi 및 Blynk 상태 확인: `WiFi.status() == WL_CONNECTED`와 `Blynk.connected()`로 각각 WiFi와 Blynk 서버의 연결 상태를 확인합니다.<br>
-  - LED 제어: WiFi와 Blynk가 정상적으로 연결된 경우 LED를 1초 간격으로 깜빡이게 하며, 연결이 실패하면 LED를 끕니다.<br>
+  - `Blynk.begin()` 함수를 사용하여 ESP32가 WiFi 네트워크와 Blynk 서버에 연결되도록 설정합니다.<br>
+  - 내장 LED(2번 핀)를 제어하여 WiFi 및 Blynk 서버의 연결 상태를 시각적으로 확인할 수 있습니다.<br>
+  - `Blynk.run()` 함수는 Blynk 라이브러리가 원활하게 동작하고, 서버와의 통신을 지속적으로 유지하도록 합니다.<br>
+  - 연결 상태에 따라 LED를 깜빡이도록 하여, WiFi가 연결된 상태와 Blynk 서버에 연결된 상태를 눈으로 확인할 수 있습니다.<br>
+  - WiFi가 연결된 경우: LED가 1초 간격으로 깜빡입니다.<br>
+  - WiFi가 연결되지 않았거나, Blynk 서버에 연결되지 않은 경우: LED가 꺼져 있습니다.<br>
+  - `Serial.begin(9600)`은 시리얼 모니터에서 디버깅 정보를 확인할 수 있도록 설정하였으며, Blynk 서버와의 통신 상태를 확인하는 데 사용할 수 있습니다.<br>
 </details>
 
 ---
