@@ -101,6 +101,7 @@ void showDisplay() {
   }
 
   display.println(brightness);
+  display.setTextSize(1);
   display.print("by kimyw33");
 
   display.display();
