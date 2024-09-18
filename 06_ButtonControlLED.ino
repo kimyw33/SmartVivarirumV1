@@ -12,6 +12,8 @@ bool currentButtonState = LOW; // 현재 버튼 상태를 저장하는 변수
 
 void setup() {
   pinMode(BUTTON_PIN, INPUT); // 버튼 핀을 입력 모드로 설정합니다.
+  // 버튼을 눌렀을 때, Led가 오작동하거나, 깜빡깜빡 거릴 경우, 아래 코드의 주석을 제거하고 사용
+  //pinMode(BUTTON_PIN, INPUT_PULLUP);  // 버튼 핀을 풀업 저항과 함께 입력 모드로 설정
   pixels.begin();             // NeoPixel 스트립을 초기화합니다.
 }
 

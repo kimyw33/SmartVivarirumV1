@@ -184,3 +184,35 @@
 </details>
 
 ---
+
+# 08_SmartVivariumV1
+
+**목적**  
+이 프로젝트의 목적은 **ESP32**, **Blynk**, **DHT11 센서**, **조도 센서(Cds)**, **NeoPixel**, 그리고 **OLED 디스플레이**를 이용하여 **스마트 비바리움(Smart Vivarium)** 시스템을 구축하는 것입니다. 이 시스템을 통해 실시간으로 환경 데이터를 모니터링하고, Blynk 앱을 통해 원격으로 제어할 수 있습니다.
+
+<details>
+  <summary>준비물</summary>
+  - ESP32 개발 보드<br>
+  - DHT11 온습도 센서<br>
+  - 조도 센서(Cds)<br>
+  - NeoPixel LED (9개)<br>
+  - SSD1306 OLED 디스플레이<br>
+  - 버튼 (GPIO 23에 연결)<br>
+  - USB 케이블 (ESP32와 PC 연결용)<br>
+  - WiFi 네트워크 (SSID 및 비밀번호 필요)<br>
+  - Blynk 템플릿 (Blynk 계정 및 인증 토큰 필요)<br>
+  - Arduino IDE (코드 작성 및 업로드)<br>
+  - 필요한 라이브러리 (Blynk, Adafruit SSD1306, Adafruit GFX, Adafruit NeoPixel, DHT)
+</details>
+
+<details>
+  <summary>코드 설명</summary>
+  - WiFi 및 Blynk 연결: `Blynk.begin()`을 사용하여 ESP32가 WiFi 네트워크와 Blynk 서버에 연결되도록 설정합니다.<br>
+  - 온습도 측정: `dhtEvent()` 함수는 DHT11 센서를 사용하여 실시간으로 온도와 습도를 측정하고, 측정된 데이터를 Blynk 앱으로 전송합니다.<br>
+  - 조도 측정: `cdsEvent()` 함수는 조도 센서(Cds)를 사용하여 빛의 밝기를 측정하고, 이를 Blynk 앱으로 전송합니다.<br>
+  - OLED 디스플레이: `showDisplay()` 함수는 OLED 디스플레이에 실시간으로 측정된 온도, 습도, 조도 값을 출력합니다.<br>
+  - NeoPixel 제어: `updateLEDState()` 함수는 NeoPixel LED의 상태를 제어하며, Blynk 앱 또는 버튼을 통해 켜고 끌 수 있습니다.<br>
+  - 버튼 제어: `handleButtonPress()` 함수는 버튼을 눌렀을 때 NeoPixel LED 상태를 토글합니다. 버튼이 눌릴 때 LED 상태가 바뀌고, 변경된 상태는 Blynk 앱으로 전송됩니다.<br>
+  - Blynk 앱 제어: `BLYNK_WRITE(V3)` 핸들러는 Blynk 앱에서 V3 가상 핀을 통해 LED를 제어하며, 앱에서 보내온 값을 기반으로 NeoPixel LED의 상태를 제어합니다.<br>
+  - 타이머 설정: `timer.setInterval()` 함수를 사용하여 일정 시간마다 센서 데이터를 읽고, OLED 디스플레이를 갱신하며, Blynk 서버와 통신합니다.
+</details>
