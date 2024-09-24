@@ -15,7 +15,7 @@ ESP32 보드, DOIT ESP32 DEVKIT V1, 온/습도 센서, 조도 센서, 버튼, OL
   6. 보드 및 포트를 아래와 같이 연결<br>
      - 보드: DOIT ESP32 DEVKIT V1<br>
      - 포트: Serial Port(USB), 포트 번호는 COM4, COM3 등으로 다를 수 있음.<br>
-  7. [ESP32 업로드 에러 발생 시](https://docs.google.com/presentation/d/1MqSPEBPEWeh-agVcmBz7CRioSePWG-13oV_nJNzy-uo/edit?usp=sharing)
+  7. [ESP32 업로드 에러 발생 시](https://docs.google.com/presentation/d/1MqSPEBPEWeh-agVcmBz7CRioSePWG-13oV_nJNzy-uo/edit?usp=sharing, "문제해결")
 </details>
 <details>
   <summary>최종 프로젝트 완성 과정까지 겪었던 주요 문제점과 해결 방안</summary>
