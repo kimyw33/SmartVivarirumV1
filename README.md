@@ -7,7 +7,7 @@ ESP32 보드, DOIT ESP32 DEVKIT V1, 온/습도 센서, 조도 센서, 버튼, OL
 01~07까지 소단위 프로젝트를 순차적으로 실행해가며, ESP32 및 각종 센서, 액추에이터의 활용 방법, Blynk 연동 방법 등을 살펴볼 수 있고, 최종 목적지인 08번 프로젝트에서는 스마트 비바리움의 IoT 파트를 완성할 수 있도록 구성하였습니다.<br>
 <details>
   <summary>환경 구축(최초 1회)</summary>
-  1. OS에 맞는 [Arduino IDE 설치](https://www.arduino.cc/en/software).<br>
+  1. OS에 맞는 [Arduino IDE 설치](https://www.arduino.cc/en/software)<br>
   2. 필요한 경우 시스템 언어 변경(File/Arduino IED->Preferences->재시작)<br>
   3. 기본 설정->추가 보드 관리자 URL->'비공식 보드 지원 URL 목록을 보려면 클릭하십시오.' 클릭->'Espressif ESP32' 검색->해당 '*.json'파일 복사/붙여넣기 후 확인<br>
   4. 보드 매니저->'esp32 by Espressif Systems'설치<br>
@@ -15,7 +15,7 @@ ESP32 보드, DOIT ESP32 DEVKIT V1, 온/습도 센서, 조도 센서, 버튼, OL
   6. 보드 및 포트를 아래와 같이 연결<br>
      - 보드: DOIT ESP32 DEVKIT V1<br>
      - 포트: Serial Port(USB), 포트 번호는 COM4, COM3 등으로 다를 수 있음.<br>
-  7. [ESP32 업로드 에러 발생 시](https://docs.google.com/presentation/d/1MqSPEBPEWeh-agVcmBz7CRioSePWG-13oV_nJNzy-uo/edit?usp=sharing).
+  7. [ESP32 업로드 에러 발생 시](https://docs.google.com/presentation/d/1MqSPEBPEWeh-agVcmBz7CRioSePWG-13oV_nJNzy-uo/edit?usp=sharing)
 </details>
 <details>
   <summary>최종 프로젝트 완성 과정까지 겪었던 주요 문제점과 해결 방안</summary>
