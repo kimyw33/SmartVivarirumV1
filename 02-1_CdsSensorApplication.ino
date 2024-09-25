@@ -10,17 +10,17 @@ void loop() {
   // 조도 값을 5단계로 구분
   String brightness;
   if (Cds_value < 820) {
-    brightness = "So Dark";  // 조도 값이 매우 낮으면 매우 어두운 상태
+    brightness = "So Dark";  // 조도 값이 매우 낮으면 "So Dark"(매우 어두움)
   } else if (Cds_value < 1630) {
-    brightness = "Dark";  // 조도 값이 낮으면 어두운 상태
+    brightness = "Dark";  // 조도 값이 낮으면 "Dark"(어두움)
   } else if (Cds_value < 2450) {
-    brightness = "Normal";  // 조도 값이 중간이면 보통 상태
+    brightness = "Normal";  // 조도 값이 중간이면 "Normal"(보통)
   } else if (Cds_value < 3270) {
-    brightness = "Bright";  // 조도 값이 높으면 밝은 상태
+    brightness = "Bright";  // 조도 값이 높으면 "Bright"(밝음)
   } else {
-    brightness = "So Bright";  // 조도 값이 매우 높으면 매우 밝은 상태
+    brightness = "So Bright";  // 조도 값이 매우 높으면 "So Bright"매우 밝음
   }
 
-  Serial.println(brightness);  // 구분된 밝기 값을 시리얼 모니터에 출력
-  delay(1000);  // 1초마다 값을 읽고 출력하여 과도한 출력 방지
+  Serial.println(brightness);  // 밝기 정도를 5단계로 구분하여 시리얼 모니터에 출력
+  delay(1000);                 // 1초마다 값을 읽고 출력하여 과도한 출력 방지
 }
