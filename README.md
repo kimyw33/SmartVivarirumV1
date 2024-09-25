@@ -109,7 +109,7 @@ ESP32 보드 1개, USB 5핀 케이블(데이터 전송용) 1개, ESP32 쉴드(DO
   - 온/습도 센서(DHT11) 1개
   - 점퍼 와이어(쉴드와 온/습도 센서 모듈 연결용) 1개<br>
   - Arduino IDE (코드 작성 및 업로드)<br>
-  - DHT 라이브러리(Arduino IDE에서 설치, 본 실습에서는 <span style="color:red;">DHT sensor library</span> by Adafruit 사용)<br>
+  - DHT 라이브러리(Arduino IDE에서 설치, 본 실습에서는 "DHT sensor library" by Adafruit 사용)
 </details>
 
 <details>
