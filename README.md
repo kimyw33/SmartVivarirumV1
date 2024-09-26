@@ -173,7 +173,7 @@ ESP32 보드 1개, USB 5핀 케이블(데이터 전송용) 1개, ESP32 쉴드(DO
   - 버튼 핀 설정: 'pinMode(BUTTON, INPUT)'을 사용하여 버튼 핀을 입력 모드로 설정합니다.<br>
   - 버튼 상태 읽기: 'digitalRead(BUTTON)'으로 버튼 핀의 디지털 입력 값을 읽어옵니다.<br>
   - 버튼 상태 출력: 읽어온 버튼 상태를 'Serial.println(buttonState)'을 사용하여 시리얼 모니터에 출력합니다.<br>
-  - 지연시간 추가: 'delay(100)'을 사용하여 버튼 상태를 읽는 간격을 0.1초로 설정하여 입력 노이즈를 방지합니다.<br>
+  - 디바운싱: 'delay(100)'을 사용하여 버튼 상태를 읽는 간격을 0.1초로 설정하여 입력 노이즈를 방지합니다.<br>
 </details>
 
   <summary>응용(05-1_MaintainingButtonState)</summary>
@@ -184,18 +184,20 @@ ESP32 보드 1개, USB 5핀 케이블(데이터 전송용) 1개, ESP32 쉴드(DO
  # 06_ButtonControlLed
 
 **목적**  
-이 프로젝트의 목적은 위에서 살펴본 **버튼을 활용**하여 **NeoPixel LED 스트립의 전원을 제어**하는 것입니다. 버튼을 눌렀을 때, NeoPixel LED가 켜지며, 버튼을 다시 누르면 NeoPixel LED 꺼집니다.<br>
-추가로 NeoPixel Led의 색상은 식물의 광합성에 가장 효율적인 **청색**과 **적색**으로 설정하였습니다.
+이 프로젝트의 목적은 위에서 살펴본 **BUTTON을 활용**하여 **NeoPixel LED 스트립의 전원을 제어**하는 것입니다. 버튼을 눌렀을 때, NeoPixel LED가 켜지며, 버튼을 다시 누르면 NeoPixel LED 꺼집니다.<br>
+추가로 NeoPixel Led의 색상은 식물의 광합성에 가장 효율적인 **청색**과 **적색**으로 설정하였습니다.<br>
+참고: LED를 추가할 경우(2개 직렬 연결 시) 'NUMPIXELS 9'를 'NUMPIXELS 18'로 변경 후, 기존 LED의 OUT 단자와 추가한 LED의 IN 단자를 연결 
 
 <details>
   <summary>준비물</summary>
-  - ESP32 개발 보드<br>
-  - NeoPixel LED 스트립 (픽셀 수: 9)<br>
-  - 버튼<br>
-  - 점퍼 와이어<br>
-  - USB 케이블 (ESP32와 PC 연결용)<br>
+  - ESP32 보드 1개<br>
+  - EPS32 쉴드(DOIT ESP32 DEVKIT V1) 1개<br>
+  - USB 케이블(ESP32와 PC 연결용) 1개<br>
+  - BUTTON 모듈 1개
+  - NeoPixel LED 스트립 1개(픽셀 수: 9)<br>
+  - 점퍼 와이어(쉴드와 BUTTON 모듈, LED 모듈 연결용) 총 2개<br>
   - Arduino IDE (코드 작성 및 업로드)<br>
-  - Adafruit NeoPixel 라이브러리(Arduino IDE에서 설치, 본 실습에서는 Adafruit NeoPixel by Adafruit 사용)<br>
+  - Adafruit NeoPixel 라이브러리(Arduino IDE에서 설치, 본 실습에서는 "Adafruit NeoPixel" by Adafruit 사용)
 </details>
 
 <details>
