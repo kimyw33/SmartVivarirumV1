@@ -115,8 +115,8 @@ ESP32 보드 1개, USB 5핀 케이블(데이터 전송용) 1개, ESP32 쉴드(DO
 <details>
   <summary>코드 설명</summary>
   - GPIO 14번 핀에 연결된 DHT11 센서로부터 온도와 습도 데이터를 읽어들입니다.<br>
-  - "DHT.h"헤더파일에 포함된 `dht.readTemperature()` 함수로 온도 값을, `dht.readHumidity()` 함수로 습도 값을 읽습니다.<br>
-  - 읽어들인 값은 시리얼 모니터를 통해 출력되며, DHT11 센서는 특성 상 최소 2초 이상의 딜레이가 필요하므로, "delay(2000)"를 사용합니다.<br>
+  - 'DHT.h'헤더파일에 포함된 `dht.readTemperature()` 함수로 온도 값을, `dht.readHumidity()` 함수로 습도 값을 읽습니다.<br>
+  - 읽어들인 값은 시리얼 모니터를 통해 출력되며, DHT11 센서는 특성 상 최소 2초 이상의 딜레이가 필요하므로, 'delay(2000)'를 사용합니다.<br>
 </details>
 
 ---
@@ -142,8 +142,8 @@ ESP32 보드 1개, USB 5핀 케이블(데이터 전송용) 1개, ESP32 쉴드(DO
   - I2C 통신을 사용하여 SSD1306 OLED 디스플레이에 텍스트를 출력합니다.<br>
   - 디스플레이의 해상도(128x64)를 설정하고, 디스플레이 객체를 초기화한 후 텍스트를 출력합니다.<br>
   - 텍스트는 총 4줄로 구성되어 있으며, "Smart Vivarium Test"와 "프로젝트 제작자 이름/닉네임"을 포함합니다.<br>
-  - "display.clearDisplay()"로 화면을 지우고(초기화), "display.setTextSize(2)"로 텍스트 크기를 두 배로 설정합니다.<br>
-  - "display.println()"과 "display.print()"를 사용하여 각 줄에 텍스트를 출력하며, "display.display()"를 호출하여 내용을 OLED 화면에 텍스트를 출력합니다.<br>
+  - 'display.clearDisplay()'로 화면을 지우고(초기화), "display.setTextSize(2)"로 텍스트 크기를 두 배로 설정합니다.<br>
+  - 'display.println()'과 'display.print()'를 사용하여 각 줄에 텍스트를 출력하며, 'display.display()'를 호출하여 내용을 OLED 화면에 텍스트를 출력합니다.<br>
   - 또한 프로그램이 정상적으로 작동하지 않을 경우, 시리얼 모니터에 오류 메시지를 출력한 후 무한 루프에 빠져 오류를 디버깅할 수 있게 설정되어 있습니다.<br>
 </details>
 
@@ -170,15 +170,14 @@ ESP32 보드 1개, USB 5핀 케이블(데이터 전송용) 1개, ESP32 쉴드(DO
 
 <details>
   <summary>코드 설명</summary>
-  - 버튼 핀 설정: `pinMode(BUTTON, INPUT)`을 사용하여 버튼 핀을 입력 모드로 설정합니다.<br>
-  - 시리얼 통신 설정: `Serial.begin(9600)`으로 시리얼 통신의 전송 속도를 9600bps로 설정합니다.<br>
-  - 버튼 상태 읽기: `digitalRead(BUTTON)`으로 버튼 핀의 디지털 입력 값을 읽어옵니다.<br>
-  - 버튼 상태 출력: 읽어온 버튼 상태를 `Serial.println(buttonState)`를 사용하여 시리얼 모니터에 출력합니다.<br>
-  - 딜레이 추가: `delay(100)`을 사용하여 버튼 상태를 읽는 간격을 100밀리초로 설정하여 입력 노이즈를 방지합니다.<br>
+  - 버튼 핀 설정: 'pinMode(BUTTON, INPUT)'을 사용하여 버튼 핀을 입력 모드로 설정합니다.<br>
+  - 버튼 상태 읽기: 'digitalRead(BUTTON)'으로 버튼 핀의 디지털 입력 값을 읽어옵니다.<br>
+  - 버튼 상태 출력: 읽어온 버튼 상태를 'Serial.println(buttonState)'을 사용하여 시리얼 모니터에 출력합니다.<br>
+  - 지연시간 추가: 'delay(100)'을 사용하여 버튼 상태를 읽는 간격을 0.1초로 설정하여 입력 노이즈를 방지합니다.<br>
 </details>
 
   <summary>응용(05-1_MaintainingButtonState)</summary>
- 이 프로젝트의 목적은 버튼을 한 번 눌렀을 때 버튼 상태를 0 또는 1로 유지하는 것입니다. 버튼이 눌릴 때마다 상태를 토글하여 시리얼 모니터에 출력합니다.
+ 이 프로젝트의 목적은 "버튼을 한 번 눌렀을 때 버튼 상태를 0 또는 1로 유지하는 것"입니다. 버튼이 눌릴 때마다 상태를 토글하여 시리얼 모니터에 출력합니다.
 
  ---
 
