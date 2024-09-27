@@ -2,7 +2,7 @@
 
 #define PIN 4          // NeoPixel 스트립을 위한 GPIO 4
 #define BUTTON_PIN 23  // 버튼을 위한 GPIO 23
-#define NUMPIXELS 9    // NeoPixel의 픽셀 수
+#define NUMPIXELS 18   // NeoPixel의 픽셀 수
 
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
@@ -12,7 +12,7 @@ bool currentButtonState = LOW;  // 현재 버튼 상태를 저장하는 변수
 
 void setup() {
   pinMode(BUTTON_PIN, INPUT);  // 버튼 핀을 입력 모드로 설정합니다.
-  // 버튼을 눌렀을 때, Led가 오작동하거나, 깜빡깜빡 거릴 경우, 아래 코드의 주석을 제거하고 사용
+  // 버튼을 눌렀을 때, Led가 오작동하거나, 깜빡깜빡 거릴 경우, 위 코드를 주석처리하고, 아래 코드의 주석을 제거하여 코드 작성
   //pinMode(BUTTON_PIN, INPUT_PULLUP);  // 버튼 핀을 풀업 저항과 함께 입력 모드로 설정
   pixels.begin();  // NeoPixel 스트립을 초기화합니다.
 }
