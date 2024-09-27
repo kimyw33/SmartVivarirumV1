@@ -1,7 +1,7 @@
-#include <Wire.h>              // I2C 통신을 위한 라이브러리
-#include <Adafruit_GFX.h>      // 그래픽 관련 기능을 제공하는 라이브러리
-#include <Adafruit_SSD1306.h>  // SSD1306 OLED 디스플레이를 제어하는 라이브러리
-#include <DHT.h>               // DHT 센서를 사용하기 위한 라이브러리
+#include <Wire.h>              // I2C 통신을 위한 헤더파일 호출
+#include <Adafruit_GFX.h>      // 그래픽 관련 기능을 제공하는 헤더파일 호출
+#include <Adafruit_SSD1306.h>  // SSD1306 OLED 디스플레이를 제어하기 위한 헤더파일 호출
+#include <DHT.h>               // DHT 센서를 사용하기 위한 헤더파일 호출
 
 #define SCREEN_WIDTH 128     // OLED 디스플레이의 너비 (픽셀 단위)
 #define SCREEN_HEIGHT 64     // OLED 디스플레이의 높이 (픽셀 단위)

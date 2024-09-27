@@ -4,15 +4,15 @@
 #define BLYNK_TEMPLATE_NAME "SmartVivariumV1"
 #define BLYNK_AUTH_TOKEN "ZZ6kgbjkx892h8YXiIK-ctpuh1IM6ETQ"
 
-// 필요한 라이브러리 포함
-#include <WiFi.h>               // WiFi 연결을 위한 라이브러리
-#include <WiFiClient.h>         // WiFi 클라이언트 기능을 제공하는 라이브러리
-#include <BlynkSimpleEsp32.h>   // Blynk와 ESP32 연결을 위한 라이브러리
-#include <Wire.h>               // I2C 통신을 위한 라이브러리
-#include <Adafruit_GFX.h>       // 그래픽 관련 기능을 제공하는 라이브러리
-#include <Adafruit_SSD1306.h>   // SSD1306 OLED 디스플레이를 제어하는 라이브러리
-#include <DHT.h>                // 온도, 습도 센서를 위한 라이브러리
-#include <Adafruit_NeoPixel.h>  // NeoPixel LED 제어를 위한 라이브러리
+// 필요한 함수가 정의된 헤더파일 호출
+#include <WiFi.h>               // WiFi 연결을 위한 헤더파일 호출
+#include <WiFiClient.h>         // WiFi 클라이언트 기능을 제공하는 헤더파일 호출
+#include <BlynkSimpleEsp32.h>   // Blynk와 ESP32 연결을 위한 헤더파일 호출
+#include <Wire.h>               // I2C 통신을 위한 헤더파일 호출
+#include <Adafruit_GFX.h>       // 그래픽 관련 기능을 제공하는 헤더파일 호출
+#include <Adafruit_SSD1306.h>   // SSD1306 OLED 디스플레이를 제어하기 위한 헤더파일 호출
+#include <DHT.h>                // 온도, 습도 센서를 위한 헤더파일 호출
+#include <Adafruit_NeoPixel.h>  // NeoPixel LED 제어를 위한 헤더파일 호출
 
 // WiFi 정보
 char ssid[] = "homesweethome";  // 연결할 WiFi의 SSID(네트워크 이름)

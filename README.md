@@ -217,12 +217,12 @@ ESP32 보드 1개, USB 5핀 케이블(데이터 전송용) 1개, ESP32 쉴드(DO
 
 <details>
   <summary>준비물</summary>
-  - ESP32 개발 보드<br>
-  - USB 케이블(ESP32와 PC 연결용)<br>
-  - WiFi 네트워크 (SSID 및 비밀번호 필요. 5G는 연결이 안되므로 주의할 것)<br>
-  - Blynk 템플릿 (Blynk 계정 및 인증 토큰 필요)<br>
+  - ESP32 보드 1개<br>
+  - EPS32 쉴드(DOIT ESP32 DEVKIT V1) 1개<br>
+  - USB 케이블(ESP32와 PC 연결용) 1개<br>
+  - 무선 네트워크 환경(ssid 입력 시 5[Ghz]는 불가능함에 유의, 2.4[Ghz] 사용)<br>
   - Arduino IDE (코드 작성 및 업로드)<br>
-  - Blynk 라이브러리 (Arduino IDE에서 설치, 본 실습에서는 Blynk by Volodymyr Shymanskyy 사용)<br>
+  - Blynk 라이브러리 (Arduino IDE에서 설치, 본 실습에서는 "Blynk" by Volodymyr Shymanskyy 사용)
 </details>
 
 <details>
@@ -230,10 +230,10 @@ ESP32 보드 1개, USB 5핀 케이블(데이터 전송용) 1개, ESP32 쉴드(DO
   - `Blynk.begin()` 함수를 사용하여 ESP32가 WiFi 네트워크와 Blynk 서버에 연결되도록 설정합니다.<br>
   - 내장 LED(2번 핀)를 제어하여 WiFi 및 Blynk 서버의 연결 상태를 시각적으로 확인할 수 있습니다.<br>
   - `Blynk.run()` 함수는 Blynk 라이브러리가 원활하게 동작하고, 서버와의 통신을 지속적으로 유지하도록 합니다.<br>
-  - 연결 상태에 따라 LED를 깜빡이도록 하여, WiFi가 연결된 상태와 Blynk 서버에 연결된 상태를 눈으로 확인할 수 있습니다.<br>
+  - 연결 상태에 따라 ESP32에 내장된 LED를 깜빡이도록 하여, WiFi 연결 및 Blynk 서버에 연결된 상태를 육안으로 확인할 수 있습니다.<br>
   - WiFi가 연결된 경우: LED가 1초 간격으로 깜빡입니다.<br>
   - WiFi가 연결되지 않았거나, Blynk 서버에 연결되지 않은 경우: LED가 꺼져 있습니다.<br>
-  - `Serial.begin(9600)`은 시리얼 모니터에서 디버깅 정보를 확인할 수 있도록 설정하였으며, Blynk 서버와의 통신 상태를 확인하는 데 사용할 수 있습니다.<br>
+  - 참고로 `Serial.begin(9600)`은 시리얼 모니터에서 디버깅 정보를 확인할 수 있도록 설정하였으며, Blynk 서버와의 통신 상태를 확인하는 데 사용할 수 있습니다.
 </details>
 
 ---

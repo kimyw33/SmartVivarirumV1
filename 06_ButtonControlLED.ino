@@ -1,4 +1,4 @@
-#include <Adafruit_NeoPixel.h>
+#include <Adafruit_NeoPixel.h>  // NeoPixel 스트립을 제어하기 위한 헤더파일 호출
 
 #define PIN 4          // NeoPixel 스트립을 위한 GPIO 4
 #define BUTTON_PIN 23  // 버튼을 위한 GPIO 23

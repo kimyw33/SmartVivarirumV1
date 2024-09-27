@@ -1,8 +1,8 @@
 // 본 프로젝트에서 사용하는 실드에서 제공하는 2개의 I2C핀 중 아무곳이나 연결 가능(병렬 출력 방식)
 
-#include <Wire.h>  // I2C 통신을 위한 라이브러리
-#include <Adafruit_GFX.h>  // 그래픽 관련 기능을 제공하는 라이브러리
-#include <Adafruit_SSD1306.h>  // SSD1306 OLED 디스플레이를 제어하는 라이브러리
+#include <Wire.h>  // I2C 통신을 위한 헤더파일 호출
+#include <Adafruit_GFX.h>  // 그래픽 관련 기능을 제공하는 헤더파일 호출
+#include <Adafruit_SSD1306.h>  // SSD1306 OLED 디스플레이를 제어하기 위한 헤더파일 호출
 
 #define SCREEN_WIDTH 128  // OLED 디스플레이의 너비 (픽셀 단위)
 #define SCREEN_HEIGHT 64  // OLED 디스플레이의 높이 (픽셀 단위)

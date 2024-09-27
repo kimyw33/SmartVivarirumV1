@@ -1,4 +1,4 @@
-#include <DHT.h>  // DHT 센서를 사용하기 위한 라이브러리
+#include <DHT.h>  // DHT 센서를 사용하기 위한 헤더파일 호출
 
 #define DHTPIN 14  // DHT 센서를 연결한 핀 번호 (GPIO 14)
 #define DHTTYPE DHT11  // DHT 센서의 종류 (DHT11)
