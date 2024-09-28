@@ -241,13 +241,14 @@ ESP32 개발보드, USB 5핀 케이블(데이터 송수신용), ESP32 쉴드(DOI
 # 08_SmartVivariumV1
 
 **목적**  
-이 프로젝트의 목적은 **ESP32**, **Blynk**, **DHT11 센서**, **조도 센서(Cds)**, **NeoPixel**, 그리고 **OLED 디스플레이**를 이용하여 **스마트 비바리움(Smart Vivarium)** 시스템을 구축하는 것입니다. 이 시스템을 통해 실시간으로 환경 데이터를 모니터링하고, Blynk 앱을 통해 원격으로 제어할 수 있습니다.
+이 프로젝트의 목적은 **ESP32**, **Blynk**, **DHT11 센서**, **조도 센서(Cds)**, **NeoPixel**, 그리고 **OLED 디스플레이**를 이용하여 **스마트 비바리움(Smart Vivarium)** 시스템을 구축하는 것입니다.<br>
+이 시스템을 통해 실시간으로 환경 데이터를 모니터링하고, Blynk 앱을 통해 원격으로 제어할 수 있습니다.
 
 <details>
   <summary>준비물</summary>
-  - ESP32 개발 보드<br>
-  - DHT11 온습도 센서<br>
-  - 조도 센서(Cds)<br>
+  - ESP32 보드 1개<br>
+  - 온/습도 센서 모듈 1개(DHT11)<br>
+  - 조도 센서 모듈 1개<br>
   - NeoPixel LED (9개)<br>
   - SSD1306 OLED 디스플레이<br>
   - 버튼 (GPIO 23에 연결)<br>
@@ -269,3 +270,59 @@ ESP32 개발보드, USB 5핀 케이블(데이터 송수신용), ESP32 쉴드(DOI
   - Blynk 앱 제어: `BLYNK_WRITE(V3)` 핸들러는 Blynk 앱에서 V3 가상 핀을 통해 LED를 제어하며, 앱에서 보내온 값을 기반으로 NeoPixel LED의 상태를 제어합니다.<br>
   - 타이머 설정: `timer.setInterval()` 함수를 사용하여 일정 시간마다 센서 데이터를 읽고, OLED 디스플레이를 갱신하며, Blynk 서버와 통신합니다.
 </details>
+
+---
+
+# 09_RelayControlFan
+
+**목적**  
+이 프로젝트의 목적은 ESP32와 1채널 이상의 릴레이를 이용하여 5V 팬(DC)를 켜고 끄는 것입니다.<br>
+이를 통해 릴레이의 목적 및 하드웨어 구성에 대해 이해하게 되며, 이후 스마트 비바리움의 환기 기능을 추가하기 위한 팬 및 이를 구동시키기 위한 릴레이의 구성에 대해 이해할 수 있습니다.
+
+<details>
+  <summary>준비물</summary>
+  - ESP32 보드 1개<br>
+  - EPS32 쉴드(DOIT ESP32 DEVKIT V1) 1개<br>
+  - USB 케이블(ESP32와 PC 연결용) 1개<br>
+  - DC 5V 팬 1개<br>
+  - 1채널 이상의 릴레이 1개<br>
+  - 외부 전압 공급원(DC 5V)<br>
+  - 케이블(쉴드와 릴레이 연결용 최소 3개, 필요 시 외부 전압과 릴레이 및 팬 연결용 케이블 추가로 필요)<br>
+  - Arduino IDE(코드 작성 및 업로드)<br>
+</details>
+
+<details>
+  <summary>코드 설명</summary>
+  - 쉴드의 입력 GPIO 5번 핀을 사용하여 릴레이 구동 신호를 보냅니다.<br>
+  - 릴레이 및 팬이 올바르게 작동하는지를 육안으로 동시에 살펴보기 위해 5초 단위 릴레이 작동 명령 및 이를 살펴볼 수 있는 Serial Monitoring 기능을 활용합니다.<br>
+  - 하드웨어 연결은 릴레이를 기준으로 하여 구동부는 ESP32 쉴드와 연결하고 동작부는 팬 및 외부 전원 공급원과 연결(외부 전원의 -단자와 릴레이의 COM단자 연결 및 외부 전원의 +단자에서 팬의 +단자, 이어서 팬의 -단자에서 릴레이의 NO단자와 연결) 합니다.<br>
+</details>
+
+---
+
+# 10_SmartVivariumV1.1
+
+**목적**  
+이 프로젝트의 목적은 위에서 살펴본 V1의 하드웨어에 **릴레이와 5V 팬**을 추가하여 환기 기능을 사용할 수 있도록 발전시킨 것입니다.<br>
+이를 통해 Blynk 앱(Datastream V4, Switch 기능 추가)을 통해 팬을 켜고 끌 수 있어, **과습 및 건조**의 문제 해결에 도움이 될 수 있습니다.
+
+<details>
+  <summary>준비물</summary>
+  - 08_SmartVivariumV1에 해당하는 준비물
+  - 위 준비물 외에 DC 5V 팬 1개, 1채널 이상의 릴레이 1개, 외부 전압 공급원(DC 5V), 케이블(쉴드와 릴레이 연결용 최소 3개, 필요 시 외부 전압과 릴레이 및 팬 연결용 케이블 추가로 필요)
+</details>
+
+<details>
+  <summary>코드 설명</summary>
+  - WiFi 및 Blynk 연결: `Blynk.begin()` 함수를 사용하여 ESP32가 WiFi 네트워크 및 Blynk 서버와 연결됩니다.<br>
+  - 온습도 측정: `dhtEvent()` 함수는 DHT11 센서를 사용해 온도와 습도를 측정하고, Blynk 앱으로 전송합니다.<br>
+  - 조도 측정: `cdsEvent()` 함수는 조도 센서(Cds)로 빛의 밝기를 측정하고, 그 값을 Blynk 앱으로 전송합니다.<br>
+  - OLED 디스플레이: `showDisplay()` 함수는 OLED 디스플레이에 실시간으로 온도, 습도, 조도 값을 출력합니다.<br>
+  - NeoPixel 제어* `updateLEDState()` 함수는 NeoPixel LED를 제어하며, Blynk 앱과 버튼을 통해 제어할 수 있습니다.<br>
+  - 팬 제어: `updateFanState()` 함수는 릴레이를 사용하여 팬을 제어하며, Blynk 앱의 V4 가상 핀을 통해 원격으로 팬을 켜고 끕니다.<br>
+  - 버튼 제어: `handleButtonPress()` 함수는 버튼을 통해 NeoPixel LED 상태를 변경하며, 그 값을 Blynk 앱으로 전송합니다.<br>
+  - Blynk V3 핸들러: 앱에서 V3 가상 핀으로 NeoPixel LED를 제어합니다.<br>
+  - Blynk V4 핸들러: 앱에서 V4 가상 핀으로 팬을 제어합니다.<br>
+  - 타이머 설정: `timer.setInterval()` 함수를 사용하여 주기적으로 센서 데이터를 읽고, OLED 디스플레이를 갱신하며, Blynk 서버와 통신합니다.
+</details>
+
