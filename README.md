@@ -321,4 +321,3 @@ Blynk 앱(Datastream V4, Switch 기능 추가)을 통해 팬을 켜고 끌 수 �
   - Blynk V4 핸들러: 앱에서 V4 가상 핀으로 팬을 제어합니다.<br>
   - 타이머 설정: `timer.setInterval()` 함수를 사용하여 주기적으로 센서 데이터를 읽고, OLED 디스플레이를 갱신하며, Blynk 서버와 통신합니다.
 </details>
-
