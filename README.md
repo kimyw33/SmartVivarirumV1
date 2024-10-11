@@ -50,6 +50,10 @@
   **5. 문제점: WiFi 연결 오류**  
   - **원인**: WiFi 연결 시, 일부 설정이 제대로 적용되지 않아 ESP32가 네트워크에 연결되지 않거나 Blynk 서버와 통신하지 못하는 문제가 발생.
   - **해결 방안**: WiFi 및 Blynk 관련 설정은 `#define`으로 먼저 정의한 후 관련 함수들을 `#include`로 호출함으로써 `Blynk.begin()`에서 올바르게 호출되도록 수정. 이로 인해 WiFi 및 Blynk 연결 오류가 해결됨.
+
+  **6. 문제점: 업로드 오류**  
+  - **원인**: 업로드 속도가 너무 빠르거나/느릴 때 (A fatal error occurred: Unable to verify flash chip connection (Invalid head of packet (0xE0): Possible serial noise or corruption.)와 같은 에러 발생.
+  - **해결 방안**: Arduino IDE 상단 메뉴 중 [도구]-[Upload Spped]를 적정 값으로 변경(일반적으로는 낮추기)를 통해 해결.
 </details>
 
 # 01_BuiltInLedControl
