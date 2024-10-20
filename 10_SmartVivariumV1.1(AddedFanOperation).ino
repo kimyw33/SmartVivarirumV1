@@ -54,7 +54,6 @@ BlynkTimer timer;  // Blynk 타이머
 // 변수 선언
 float h, t;                     // 습도, 온도 변수
 int cds_value;                  // 조도 값 변수
-bool isOn = false;              // LED 상태를 저장하는 변수
 bool lastButtonState = LOW;     // 마지막 버튼 상태를 저장하는 변수
 bool currentButtonState = LOW;  // 현재 버튼 상태를 저장하는 변수
 bool led_state = LOW;           // Blynk 앱에서 제어하는 LED 상태 변수
@@ -70,8 +69,9 @@ void dhtEvent() {
 
 // 조도 센서 데이터 읽기 함수
 void cdsEvent() {
-  cds_value = analogRead(Cds);
-  Blynk.virtualWrite(V2, cds_value / 1000);
+    cds_value = analogRead(Cds); // 조도 센서 값 읽기
+    int level = cds_value / 819; // 0 ~ 4095 범위를 5단계로 나누기 (819씩 증가)
+    Blynk.virtualWrite(V2, level); // 5단계 레벨 값 전송
 }
 
 // OLED 디스플레이에 값 출력
@@ -91,7 +91,30 @@ void showDisplay() {
   display.print(h);
   display.println(" %");
 
-  String brightness;
+  // 레벨에 따른 밝기 설정
+  String brightness; 
+  switch (level) {
+      case 0:
+          brightness = "So Dark";
+          break;
+      case 1:
+          brightness = "Dark";
+          break;
+      case 2:
+          brightness = "Normal";
+          break;
+      case 3:
+          brightness = "Bright";
+          break;
+      case 4:
+          brightness = "So Bright";
+          break;
+      default:
+          brightness = "Unknown";
+          break;
+  }
+
+ /* String brightness;
   if (cds_value < 820) {
     brightness = "So Dark";
   } else if (cds_value < 1630) {
@@ -103,7 +126,7 @@ void showDisplay() {
   } else {
     brightness = "So Bright";
   }
-
+*/
   display.println(brightness);
   display.setTextSize(1);
   display.print("by kimyw33");
